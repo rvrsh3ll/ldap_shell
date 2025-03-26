@@ -5,7 +5,6 @@ from pydantic import BaseModel, Field
 from typing import Optional
 from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
 from ldap3.protocol.microsoft import security_descriptor_control
-from ldap3.utils.conv import escape_filter_chars
 from ldap_shell.utils.ldap_utils import LdapUtils
 
 class LdapShellModule(BaseLdapModule):

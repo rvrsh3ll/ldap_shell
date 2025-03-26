@@ -1,9 +1,8 @@
 import logging
 from ldap3 import Connection
 from ldapdomaindump import domainDumper
-from pydantic import BaseModel, Field
-from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
-import ldap3
+from pydantic import BaseModel
+from ldap_shell.ldap_modules.base_module import BaseLdapModule
 
 class LdapShellModule(BaseLdapModule):
     """Module for establishing TLS connection with LDAP server"""

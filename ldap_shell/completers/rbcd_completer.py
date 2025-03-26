@@ -1,8 +1,7 @@
-from prompt_toolkit.completion import WordCompleter, Completion
+from prompt_toolkit.completion import Completion
 from prompt_toolkit.document import Document
 from .base import BaseArgumentCompleter
 from ldap_shell.utils.ldaptypes import SR_SECURITY_DESCRIPTOR
-from ldap_shell.utils.ace_utils import AceUtils
 from ldap_shell.utils.ldap_utils import LdapUtils
 
 class RBCDCompleter(BaseArgumentCompleter):

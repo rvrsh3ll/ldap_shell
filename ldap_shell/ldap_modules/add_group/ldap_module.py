@@ -1,5 +1,5 @@
 import logging
-from ldap3 import Connection, SUBTREE, MODIFY_ADD
+from ldap3 import Connection, SUBTREE
 from ldapdomaindump import domainDumper
 from pydantic import BaseModel, Field
 from typing import Optional
@@ -65,7 +65,7 @@ class LdapShellModule(BaseLdapModule):
             'name': self.args.group_name,
             'sAMAccountName': self.args.group_name,
             'displayName': self.args.group_name,
-            'description': f"Group created via ldap_shell"
+            'description': "Group created via ldap_shell"
         }
 
         # Create group

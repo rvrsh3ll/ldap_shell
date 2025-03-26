@@ -1,4 +1,4 @@
-from prompt_toolkit.completion import WordCompleter, Completion
+from prompt_toolkit.completion import Completion
 from prompt_toolkit.document import Document
 from .base import BaseArgumentCompleter
 from prompt_toolkit.formatted_text import HTML

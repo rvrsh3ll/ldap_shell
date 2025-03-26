@@ -2,10 +2,9 @@ import logging
 from ldap3 import Connection    
 from ldapdomaindump import domainDumper
 from pydantic import BaseModel, Field
-from typing import Optional, List
-from ldap_shell.ldap_modules.base_module import BaseLdapModule, ModuleArgument, ArgumentType, AttributesList
+from typing import Optional
+from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType, AttributesList
 from datetime import datetime, timedelta
-import re
 
 class LdapShellModule(BaseLdapModule):
     """Module for searching AD objects"""

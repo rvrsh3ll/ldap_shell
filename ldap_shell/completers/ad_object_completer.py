@@ -1,12 +1,9 @@
-from prompt_toolkit.completion import WordCompleter, Completion
+from prompt_toolkit.completion import Completion
 from prompt_toolkit.document import Document
 from prompt_toolkit.formatted_text import HTML
 from .base import BaseArgumentCompleter
-from typing import Union, Dict, Optional
 from abc import abstractmethod
 from ldap3 import SUBTREE
-import threading
-from ldap_shell.utils import history
 from ldap_shell.completers.base import ADObjectCacheManager
 
 class ADObjectCompleter(BaseArgumentCompleter):

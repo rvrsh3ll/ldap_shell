@@ -8,7 +8,7 @@ class ModuleLoader:
 		modules = os.listdir(module_path)
 		modules_list = []
 		for module in modules:
-			if os.path.isdir(os.path.join(module_path, module)) and not '__' in module and module != 'template':
+			if os.path.isdir(os.path.join(module_path, module)) and '__' not in module and module != 'template':
 				modules_list.append(module)
 		return modules_list
 	

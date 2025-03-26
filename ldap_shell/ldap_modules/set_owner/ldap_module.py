@@ -5,10 +5,8 @@ from pydantic import BaseModel, Field
 from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
 import ldap3
 from ldap_shell.utils.ldap_utils import LdapUtils
-from ldap_shell.utils.ace_utils import AceUtils
 from ldap_shell.utils.ldaptypes import SR_SECURITY_DESCRIPTOR
 from ldap3.protocol.formatters.formatters import format_sid
-from ldap3.protocol.microsoft import security_descriptor_control
 import ldap_shell.utils.ldaptypes as ldaptypes
 
 class LdapShellModule(BaseLdapModule):

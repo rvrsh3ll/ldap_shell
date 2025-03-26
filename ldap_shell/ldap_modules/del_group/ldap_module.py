@@ -2,7 +2,6 @@ import logging
 from ldap3 import Connection, SUBTREE
 from ldapdomaindump import domainDumper
 from pydantic import BaseModel, Field
-from typing import Optional
 from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
 
 class LdapShellModule(BaseLdapModule):

@@ -1,14 +1,11 @@
 from prompt_toolkit.completion import Completion
 from prompt_toolkit import PromptSession
 from prompt_toolkit.auto_suggest import AutoSuggest, Suggestion
-from prompt_toolkit.history import FileHistory
 from prompt_toolkit.shortcuts import CompleteStyle
 import string
 from ldap_shell.helper import Helper
-import os
 import logging
 from prompt_toolkit.completion import Completer
-from ldap_shell.ldap_modules.base_module import ArgumentType
 from prompt_toolkit.key_binding import KeyBindings
 from ldap_shell.completers import CompleterFactory
 from ldap_shell.utils.module_loader import ModuleLoader
@@ -156,7 +153,7 @@ class Prompt:
 				available_commands = ModuleLoader.list_modules()
 
 				# If completion is a command
-				if completion.text in available_commands and not ' ' in b.document.text_before_cursor:
+				if completion.text in available_commands and ' ' not in b.document.text_before_cursor:
 					# Delete all text
 					b.delete(len(b.document.text_after_cursor))  # first after cursor
 					b.delete_before_cursor(len(b.document.text_before_cursor))  # then before cursor
@@ -175,7 +172,7 @@ class Prompt:
 						quoted_words = shlex.split(text_before_cursor)
 					
 					last_word = quoted_words[-1]
-					if ',' in last_word and not 'DC=' in last_word:
+					if ',' in last_word and 'DC=' not in last_word:
 						del_word = last_word.split(',')[-1]
 					elif ' ' in last_word or '"' in last_word:
 						del_word = f'"{last_word}"'

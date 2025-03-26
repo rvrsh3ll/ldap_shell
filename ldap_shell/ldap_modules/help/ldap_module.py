@@ -5,10 +5,8 @@ from pydantic import BaseModel, Field
 from typing import Optional
 from ldap_shell.utils.module_loader import ModuleLoader
 from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
-import importlib
 from colorama import init, Fore, Back, Style
 import textwrap
-from ldap_shell.utils.module_loader import ModuleLoader
 # Initialize colorama for cross-platform support
 init()
 
@@ -131,7 +129,7 @@ class LdapShellModule(BaseLdapModule):
     - Type: `{arg_types}`
     - Required: {required}
 """
-                help_md += f"\n# Examples"
+                help_md += "\n# Examples"
                 # Add usage examples
                 if examples:
                     help_md += f"\n{textwrap.dedent(examples.lstrip('\n'))}"

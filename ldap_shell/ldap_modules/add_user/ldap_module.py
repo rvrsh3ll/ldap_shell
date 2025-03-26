@@ -4,9 +4,7 @@ from ldapdomaindump import domainDumper
 from pydantic import BaseModel, Field
 from typing import Optional
 from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
-from ldap_shell.utils.ldap_utils import LdapUtils
 from ldap_shell.utils.security_utils import SecurityUtils
-import re
 from ldap3.utils.conv import escape_filter_chars
 
 class LdapShellModule(BaseLdapModule):

@@ -3,11 +3,9 @@ from ldap3 import Connection
 from ldapdomaindump import domainDumper
 from pydantic import BaseModel, Field
 from typing import Optional
-from ldap_shell.prompt import Prompt
 from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
 import ldap3
 from ldap_shell.utils.ldap_utils import LdapUtils
-from ldap_shell.utils.ace_utils import AceUtils
 from ldap_shell.utils.ldaptypes import SR_SECURITY_DESCRIPTOR
 
 class LdapShellModule(BaseLdapModule):
@@ -91,7 +89,7 @@ class LdapShellModule(BaseLdapModule):
 
                 self.client.modify(target_dn,
                            {'msDS-AllowedToActOnBehalfOfOtherIdentity': [ldap3.MODIFY_REPLACE, [sd.getData()]]})
-                self.log.info(f'RBCD permissions cleared successfully!')
+                self.log.info('RBCD permissions cleared successfully!')
 
         except Exception as e:
             self.log.error(f'Error processing security descriptor: {str(e)}')

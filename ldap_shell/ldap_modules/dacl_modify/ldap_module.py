@@ -1,5 +1,5 @@
 import logging
-from ldap3 import Connection, MODIFY_REPLACE, MODIFY_ADD, MODIFY_DELETE
+from ldap3 import Connection, MODIFY_REPLACE
 from ldapdomaindump import domainDumper
 from pydantic import BaseModel, Field
 from ldap_shell.ldap_modules.base_module import BaseLdapModule, ArgumentType
